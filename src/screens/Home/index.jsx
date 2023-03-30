@@ -1,10 +1,14 @@
 import React from 'react';
+import './styles.sass'
 
 const Home = () => {
   return (
     <div>
-      <h1>As Melhores Oportunidades para Profissionais da Tecnologia</h1>
-      <p>Dev Hunter :)</p>
+      <main>
+        <div>
+          <h1>As Melhores Oportunidades para <b>Profissionais da Tecnologia</b> 🚀</h1>
+        </div>
+      </main>
     </div>
   )
 }
