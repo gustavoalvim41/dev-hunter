@@ -1,12 +1,24 @@
 import React from 'react';
-import './styles.sass'
+import './styles.sass';
 
 const Home = () => {
   return (
     <div>
       <main>
-        <div>
-          <h1>As Melhores Oportunidades para <b>Profissionais da Tecnologia</b> 🚀</h1>
+        <div className='container'>
+          <div className='presentation'>
+            <h1>As melhores oportunidades para <b>profissionais da tecnologia</b> 🚀</h1>
+          </div>
+          
+          <div className='layout'>
+            <section className='devJobs'>
+              <article>jobs</article>
+            </section>
+
+            <div className='filterYourSearch'>
+              filter
+            </div>
+          </div>
         </div>
       </main>
     </div>
