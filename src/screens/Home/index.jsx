@@ -17,7 +17,9 @@ const Home = () => {
               {
                 data.map((item) => (
                   <article key={item.id}>
-                    <h2>{item.job_title}</h2>
+                    <p>{item.career_focus}</p>
+                    <p>{item.publication}</p>
+                    <h2>{item.title}</h2>
 
                     <ul>
                       {
@@ -29,8 +31,11 @@ const Home = () => {
 
                     <p>{item.work_arrangement}</p>
                     <p>{item.seniority_level}</p>
+                    <p>{item.salary_range}</p>
 
-                    <p>{item.job_description}</p>
+                    <p>{item.description}</p>
+
+                    <button>Tenho interesse nessa vaga</button>
                   </article>
                 ))
               }

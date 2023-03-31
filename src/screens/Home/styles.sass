@@ -13,9 +13,10 @@ main
     height: 100%
 
     padding: 0
+    margin: 0 0 6.4rem 0
 
     .presentation
-      padding: 6.4rem
+      padding: 6.4rem 2.6rem
 
       h1
         font-size: 2.8rem
@@ -40,12 +41,29 @@ main
 
         article
           padding: 2rem
+
+          display: flex
+          flex-direction: column
+          gap: 1.6rem
           background-color: variables.$white
 
           h2
-            font-size: 2.2rem
+            font-size: 2.4rem
             font-weight: 500
             line-height: 2.8rem
+
+          ul
+            display: flex
+            align-items: center
+            gap: 1.6rem
+
+            li
+              padding: .8rem 1.6rem
+
+              font-weight: 600
+
+              border: .2rem solid variables.$teal400
+              color: variables.$teal400
 
 
       .filterYourSearch
