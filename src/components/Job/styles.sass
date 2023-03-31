@@ -1,0 +1,71 @@
+@use '../../styles/variables'
+@use '../../styles/mixins'
+
+.jobs
+  padding: 2rem
+
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  background-color: variables.$white
+
+  .publication
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    h2
+      font-size: 2.4rem
+      font-weight: 500
+      line-height: 2.8rem
+
+    ul
+      display: flex
+      align-items: center
+      gap: 1.6rem
+
+      li
+        padding: .6rem 1.2rem
+
+        font-size: 1.4rem
+        font-weight: 600
+        line-height: 1.6rem
+        text-transform: uppercase
+
+        border: .2rem solid variables.$teal400
+        color: variables.$teal400
+
+    .info
+      display: flex
+      align-items: center
+      gap: 2.8rem
+
+      div
+        display: flex
+        align-items: center
+        gap: .6rem
+
+    .salaryRange
+      display: flex
+      align-items: center
+      gap: .6rem
+
+    .buttonWrapper
+      width: 100%
+      display: flex
+      justify-content: flex-end
+
+      button
+        @include mixins.button
+
+      .btnPrimary
+        border: .2rem solid variables.$teal400
+
+        color: variables.$teal400
+        background-color: transparent
+
+      .btnInterested
+        border: .2rem solid transparent
+
+        color: variables.$green400
+        background-color: variables.$green200

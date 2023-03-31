@@ -65,7 +65,9 @@ main
             li
               padding: .6rem 1.2rem
 
+              font-size: 1.4rem
               font-weight: 600
+              line-height: 1.6rem
               text-transform: uppercase
 
               border: .2rem solid variables.$teal400
@@ -100,8 +102,27 @@ main
               color: variables.$teal400
               background-color: transparent
 
+            .btnInterested
+              border: .2rem solid transparent
+
+              color: variables.$green400
+              background-color: variables.$green200
+
       .filterYourSearch
+        padding: 2rem
+        height: 40vh
+
+        display: flex
+        gap: 1rem
+
         background-color: variables.$white
+
+        h3
+          font-size: 1.8rem
+
+        a
+          font-size: 1.4rem
+          color: variables.$teal400
 
     @media screen and (max-width: 1080px)   
       .presentation

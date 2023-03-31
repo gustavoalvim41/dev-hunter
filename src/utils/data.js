@@ -1,20 +1,21 @@
 export const data = [
   {
     id: 1,
-    title: "Estagiário em Desenvolvimento Web",
-    description: "Estamos buscando um estagiário em desenvolvimento web para se juntar ao nosso time e ajudar no desenvolvimento de soluções web inovadoras. O candidato ideal é apaixonado por tecnologia, tem conhecimentos básicos em HTML, CSS e JavaScript, e está em busca de uma oportunidade para aprender e crescer na área.",
-    career_focus: "Desenvolvimento Web",
+    title: "Desenvolvedor Back-end Júnior",
+    description: "Estamos buscando um desenvolvedor back-end júnior para se juntar à nossa equipe e trabalhar em projetos desafiadores. O candidato ideal deve ter conhecimentos em desenvolvimento back-end com linguagens como Python ou Node.js, banco de dados SQL, Git e estar em busca de aprender e evoluir sua carreira.",
+    career_focus: "Back-end",
     required_skills: [
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "Python",
+      "Node.js",
+      "SQL",
+      "Git"
     ],
-    type: "Estágio Remunerado",
-    seniority_level: "Estágiario",
-    work_arrangement: "Presencial",
-    salary_range: "R$ 1.000,00 - R$ 1.200,00",
-    publication: "2023-03-30"
-  },
+    type: "CLT",
+    seniority_level: "Júnior",
+    work_arrangement: "Híbrido",
+    salary_range: "R$ 2.000,00 - R$ 3.000,00",
+    publication: "2023-03-30",
+  },  
   {
     id: 2,
     title: "Desenvolvedor Front-end Júnior",
@@ -23,16 +24,14 @@ export const data = [
     required_skills: [
       "JavaScript",
       "React",
-      "Axios",
       "Sass",
-      "Jest",
       "Git"
     ],
     type: "CLT",
     seniority_level: "Júnior",
     work_arrangement: "Remoto",
     salary_range: "R$ 3,000.00 - R$ 4,500.00",
-    publication: "2023-03-31"
+    publication: "2023-03-31",
   },
   {
     id: 3,
@@ -52,7 +51,7 @@ export const data = [
     seniority_level: "Pleno",
     work_arrangement: "Remoto",
     salary_range: "R$ 8.000,00 - R$ 10.000,00",
-    publication: "2023-03-31"
+    publication: "2023-03-31",
   },  
   {
     id: 4,
@@ -77,7 +76,7 @@ export const data = [
     seniority_level: "Sênior",
     work_arrangement: "Presencial",
     salary_range: "R$ 15.000,00 - R$ 20.000,00",
-    publication: "2023-03-29"
+    publication: "2023-03-29",
   },  
   {
     id: 5,
@@ -97,6 +96,27 @@ export const data = [
     seniority_level: "Sênior",
     work_arrangement: "Presencial",
     salary_range: "R$ 12.000,00 - R$ 15.000,00",
-    publication: "2023-03-29"
-  }
+    publication: "2023-03-29",
+  },
+  {
+    id: 6,
+    title: "Engenheiro DevOps Pleno",
+    description: "Estamos procurando um Engenheiro DevOps Pleno para integrar nossa equipe de infraestrutura e garantir o suporte e melhoria contínua de nossos serviços. O candidato ideal é apaixonado por automação, tem amplo conhecimento em ferramentas e tecnologias de infraestrutura em nuvem e é capaz de trabalhar em colaboração com equipes de desenvolvimento.",
+    career_focus: "DevOps",
+    required_skills: [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Linux",
+      "Bash",
+      "Python",
+      "Terraform",
+      "Ansible"
+    ],
+    type: "CLT",
+    seniority_level: "Pleno",
+    work_arrangement: "Remoto",
+    salary_range: "R$ 8.000,00 - R$ 12.000,00",
+    publication: "2023-03-22",
+  }  
 ]
