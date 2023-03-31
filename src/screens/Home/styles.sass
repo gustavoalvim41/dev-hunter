@@ -10,18 +10,15 @@ main
   .container
     width: 100%
     max-width: 110rem
-
-    padding: 0
-
     height: 100%
 
-    background-color: blue
+    padding: 0
 
     .presentation
       padding: 6.4rem
 
       h1
-        font-size: 2.6rem
+        font-size: 2.8rem
         font-weight: 500
 
         text-align: center
@@ -31,11 +28,25 @@ main
       grid-template-columns: 1fr 37rem
       gap: 2rem
 
-      article,
       div
         height: 10vh
 
         background-color: variables.$white
+
+      .devJobs
+        display: flex
+        flex-direction: column
+        gap: 2.6rem
+
+        article
+          padding: 2rem
+          background-color: variables.$white
+
+          h2
+            font-size: 2.2rem
+            font-weight: 500
+            line-height: 2.8rem
+
 
       .filterYourSearch
         background-color: variables.$white

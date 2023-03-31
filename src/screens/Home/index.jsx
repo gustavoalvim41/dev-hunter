@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.sass';
 
+import { data } from '../../utils/data'
+
 const Home = () => {
   return (
     <div>
@@ -12,7 +14,26 @@ const Home = () => {
           
           <div className='layout'>
             <section className='devJobs'>
-              <article>jobs</article>
+              {
+                data.map((item) => (
+                  <article key={item.id}>
+                    <h2>{item.job_title}</h2>
+
+                    <ul>
+                      {
+                        item.required_skills.map((skill) => (
+                          <li key={skill}>{skill}</li>
+                        ))
+                      }
+                    </ul>
+
+                    <p>{item.work_arrangement}</p>
+                    <p>{item.seniority_level}</p>
+
+                    <p>{item.job_description}</p>
+                  </article>
+                ))
+              }
             </section>
 
             <div className='filterYourSearch'>
