@@ -1,3 +1,5 @@
+@use '../../styles/variables'
+
 main
   width: 100%
 
@@ -32,9 +34,11 @@ main
       article,
       div
         height: 10vh
-        background-color: purple
+
+        background-color: variables.$white
 
       .filterYourSearch
+        background-color: variables.$white
 
     @media screen and (max-width: 1080px)   
       .presentation
