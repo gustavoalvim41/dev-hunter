@@ -3,6 +3,34 @@ import './styles.sass';
 
 import { data } from '../../utils/data'
 import { FiBriefcase, FiMapPin, FiDollarSign } from "react-icons/fi";
+import { isToday, isYesterday, differenceInDays } from 'date-fns';
+
+const compareDate = (date) => {
+  const myDate = new Date(date);
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  let diffInDays = differenceInDays(today, myDate);
+
+  if (isToday(myDate)) {
+    diffInDays = 0;
+  } else if (isYesterday(myDate)) {
+    diffInDays = 1;
+  }
+
+  let diffString;
+
+  if (diffInDays === 0) {
+    diffString = 'hoje';
+  } else if (diffInDays === 1) {
+    diffString = 'ontem';
+  } else if (diffInDays > 1) {
+    diffString = `${diffInDays} dias atrás`;
+  }
+
+  return diffString;
+}
 
 const Home = () => {
   return (
@@ -25,7 +53,7 @@ const Home = () => {
                   <article key={item.id}>
                     <div className='publication'>
                       <span>{item.career_focus}</span>
-                      <span>{item.publication}</span>
+                      <span>{compareDate(item.publication)}</span>
                     </div>
 
                     <h2>{item.title}</h2>
@@ -68,7 +96,9 @@ const Home = () => {
 
                     <p>{item.description}</p>
 
-                    <button>Tenho interesse nessa vaga</button>
+                    <div className='buttonWrapper'>
+                      <button className='btnPrimary'>Tenho interesse nessa vaga</button>
+                    </div>
                   </article>
                 ))
               }
