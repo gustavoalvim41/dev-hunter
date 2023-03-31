@@ -4,6 +4,7 @@ import './styles.sass';
 import { data } from '../../utils/data'
 
 import Job from '../../components/Job';
+import Filter from '../../components/Filter';
 
 const Home = () => {
   const [jobs, setJobs] = useState(data)
@@ -42,10 +43,7 @@ const Home = () => {
             </section>
 
             <div>
-              <div className='filterYourSearch'>
-                <h3>Filtre sua busca</h3>
-                <a>Limpar</a>
-              </div>
+              <Filter />
             </div>
           </div>
         </div>
