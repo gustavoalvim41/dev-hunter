@@ -29,23 +29,27 @@ main
       grid-template-columns: 1fr 37rem
       gap: 2rem
 
-      div
-        height: 10vh
-
-        background-color: variables.$white
-
       .devJobs
         display: flex
         flex-direction: column
         gap: 2.6rem
 
+        .jobsAvailable
+          b
+            color: variables.$teal400
+        
         article
           padding: 2rem
 
           display: flex
           flex-direction: column
-          gap: 1.6rem
+          gap: 2rem
           background-color: variables.$white
+        
+          .publication
+            display: flex
+            align-items: center
+            justify-content: space-between
 
           h2
             font-size: 2.4rem
@@ -58,13 +62,27 @@ main
             gap: 1.6rem
 
             li
-              padding: .8rem 1.6rem
+              padding: .6rem 1.2rem
 
               font-weight: 600
 
               border: .2rem solid variables.$teal400
               color: variables.$teal400
+          
+          .info
+            display: flex
+            align-items: center
+            gap: 2.8rem
 
+            div
+              display: flex
+              align-items: center
+              gap: .6rem
+
+          .salaryRange
+            display: flex
+            align-items: center
+            gap: .6rem
 
       .filterYourSearch
         background-color: variables.$white
