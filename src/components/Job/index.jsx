@@ -24,8 +24,22 @@ const compareDate = (date) => {
     diffString = 'hoje';
   } else if (diffInDays === 1) {
     diffString = 'ontem';
-  } else if (diffInDays > 1) {
+  } else if (diffInDays < 7) {
     diffString = `${diffInDays} dias atrás`;
+  } else if (diffInDays < 30) {
+    const diffInWeeks = Math.floor(diffInDays / 7);
+    if (diffInWeeks === 1) {
+      diffString = '1 semana atrás';
+    } else {
+      diffString = `${diffInWeeks} semanas atrás`;
+    }
+  } else {
+    const diffInMonths = Math.floor(diffInDays / 30);
+    if (diffInMonths === 1) {
+      diffString = '1 mês atrás';
+    } else {
+      diffString = `${diffInMonths} meses atrás`;
+    }
   }
 
   return diffString;

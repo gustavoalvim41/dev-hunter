@@ -96,7 +96,7 @@ export const data = [
     seniority_level: "Sênior",
     work_arrangement: "Presencial",
     salary_range: "R$ 12.000,00 - R$ 15.000,00",
-    publication: "2023-03-29",
+    publication: "2023-03-20",
   },
   {
     id: 6,
@@ -117,6 +117,6 @@ export const data = [
     seniority_level: "Pleno",
     work_arrangement: "Remoto",
     salary_range: "R$ 8.000,00 - R$ 12.000,00",
-    publication: "2023-03-22",
+    publication: "2023-02-28",
   }  
 ]
