@@ -45,18 +45,7 @@ const compareDate = (date) => {
   return diffString;
 }
 
-const Job = ({
-  id, 
-  title, 
-  description, 
-  career_focus, 
-  required_skills, 
-  type, 
-  seniority_level, 
-  work_arrangement, 
-  salary_range, 
-  publication
-  }) => {
+const Job = (props) => {
   const [isInterested, setIsInterested] = useState(false)
 
   const handleToggleInterest = () => {
@@ -64,24 +53,24 @@ const Job = ({
   }
   return (
     <article 
-      key={id} 
+      key={props.id} 
       className='jobs'
     >
       <div className='publication'>
-        <span>{career_focus}</span>
-        <span>{compareDate(publication)}</span>
+        <span>{props.career_focus}</span>
+        <span>{compareDate(props.publication)}</span>
       </div>
 
-      <h2>{title}</h2>
+      <h2>{props.title}</h2>
 
       <ul>
         {
-          required_skills.slice(0, 3).map((skill) => (
+          props.required_skills.slice(0, 3).map((skill) => (
             <li key={skill}>{skill}</li>
           ))
         }
-        {required_skills.length > 3 && (
-          <li>+ {required_skills.length - 3}</li>
+        {props.required_skills.length > 3 && (
+          <li>+ {props.required_skills.length - 3}</li>
         )}
       </ul>
 
@@ -91,14 +80,14 @@ const Job = ({
             color='black'
             size={20}
           />
-          <span>{work_arrangement}</span>
+          <span>{props.work_arrangement}</span>
         </div>
         <div>
           <FiBriefcase
             color='black'
             size={20}
           />
-          <span>{seniority_level}</span>
+          <span>{props.seniority_level}</span>
         </div>
       </div>
 
@@ -107,10 +96,10 @@ const Job = ({
           color='black'
           size={20}
         />
-        <span>{salary_range} ({type})</span>
+        <span>{props.salary_range} ({props.type_contract})</span>
       </div>
 
-      <p>{description}</p>
+      <p>{props.description}</p>
 
       <div className='buttonWrapper'>
         <button

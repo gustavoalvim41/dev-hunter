@@ -32,7 +32,7 @@ const Home = () => {
                     description={item.description}
                     career_focus={item.career_focus}
                     required_skills={item.required_skills}
-                    type={item.type}
+                    type_contract={item.type_contract}
                     seniority_level={item.seniority_level}
                     work_arrangement={item.work_arrangement}
                     salary_range={item.salary_range}

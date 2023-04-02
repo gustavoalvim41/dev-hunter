@@ -4,8 +4,17 @@ import './styles.sass';
 const Filter = () => {
   return (
     <div className='filterYourSearch'>
-      <h3>Filtre sua busca</h3>
-      <a>Limpar</a>
+      <div className='clearFilter'>
+        <h3>Filtre sua busca</h3>
+        <a>Limpar</a>
+      </div>
+      <div>
+        <button 
+          className='btnSecondary'
+        >
+          Filtrar
+        </button>
+      </div>
     </div>
   )
 }
