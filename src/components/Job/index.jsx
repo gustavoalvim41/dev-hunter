@@ -80,7 +80,7 @@ const Job = (props) => {
             color='black'
             size={20}
           />
-          <span>{props.work_arrangement}</span>
+          <span>{props.type_job}</span>
         </div>
         <div>
           <FiBriefcase

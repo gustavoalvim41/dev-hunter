@@ -34,7 +34,7 @@ const Home = () => {
                     required_skills={item.required_skills}
                     type_contract={item.type_contract}
                     seniority_level={item.seniority_level}
-                    work_arrangement={item.work_arrangement}
+                    type_job={item.type_job}
                     salary_range={item.salary_range}
                     publication={item.publication}
                   />

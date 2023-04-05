@@ -12,7 +12,7 @@ export const data = [
     ],
     type_contract: "CLT",
     seniority_level: "Júnior",
-    work_arrangement: "Remoto",
+    type_job: "Remoto",
     salary_range: "R$ 3,000.00 - R$ 4,500.00",
     publication: "2023-04-02",
   },
@@ -29,7 +29,7 @@ export const data = [
     ],
     type_contract: "CLT",
     seniority_level: "Júnior",
-    work_arrangement: "Remoto",
+    type_job: "Remoto",
     salary_range: "R$ 2.500,00 - R$ 3.500,00",
     publication: "2023-04-02"
   }, 
