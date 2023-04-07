@@ -56,7 +56,7 @@ const Filter = ({defaultJobs, setJobs}) => {
     }
   }
 
-  const filtered = () => {
+  const filtering = () => {
     let filteredData = defaultJobs
 
     if (typeJob.length > 0) {
@@ -90,7 +90,7 @@ const Filter = ({defaultJobs, setJobs}) => {
       <div>
         <button 
           className='btnSecondary'
-          onClick={filtered}
+          onClick={filtering}
         >
           Filtrar
         </button>
