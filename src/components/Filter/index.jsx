@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.sass';
 
-const TypeJob = ({handleTypeJobChange}) => {
+const TypeJob = ({handleTypeJobChange, isCheckedRemoto, setIsCheckedRemoto, isCheckedPresencial, setIsCheckedPresencial}) => {
   return (
     <div className='typeJob'>
       <h4>Tipo de vaga</h4>
@@ -13,6 +13,8 @@ const TypeJob = ({handleTypeJobChange}) => {
             className='checkMark'
             type='checkbox'
             name='type_job'
+            checked={isCheckedRemoto}
+            onClick={() => setIsCheckedRemoto(!isCheckedRemoto)}
             onChange={handleTypeJobChange}
             id='checkbox-remoto'
             value='Remoto'
@@ -26,6 +28,8 @@ const TypeJob = ({handleTypeJobChange}) => {
             className='checkMark'
             type='checkbox'
             name='type_job'
+            checked={isCheckedPresencial}
+            onClick={() => setIsCheckedPresencial(!isCheckedPresencial)}
             onChange={handleTypeJobChange}
             id='checkbox-presencial'
             value='Presencial'
@@ -40,8 +44,8 @@ const TypeJob = ({handleTypeJobChange}) => {
 const Filter = ({defaultJobs, setJobs}) => {
   const [typeJob, setTypeJob] = useState('');
 
-  const [isCheckedRemoto, setIsCheckedRemoto] = useState()
-  const [isCheckedPresencial, setIsCheckedPresencial] = useState()
+  const [isCheckedRemoto, setIsCheckedRemoto] = useState(false)
+  const [isCheckedPresencial, setIsCheckedPresencial] = useState(false)
 
   const handleTypeJobChange = (e) => {
     const selectedTypeJob = e.target.value;
@@ -58,13 +62,14 @@ const Filter = ({defaultJobs, setJobs}) => {
     if (typeJob.length > 0) {
       filteredData = filteredData.filter((job) => typeJob.includes(job.type_job));
     }
-
     setJobs(filteredData)
   }
 
   const clearFilter = () => {
     setTypeJob([])
     setJobs(defaultJobs)
+    setIsCheckedRemoto(false)
+    setIsCheckedPresencial(false)
   }
 
   return (
@@ -75,6 +80,10 @@ const Filter = ({defaultJobs, setJobs}) => {
       </div>
 
       <TypeJob
+        isCheckedRemoto={isCheckedRemoto}
+        setIsCheckedRemoto={setIsCheckedRemoto}
+        isCheckedPresencial={isCheckedPresencial}
+        setIsCheckedPresencial={setIsCheckedPresencial}
         handleTypeJobChange={handleTypeJobChange} 
       />
 

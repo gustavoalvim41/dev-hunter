@@ -138,5 +138,24 @@ export const data = [
     location: "Qualquer lugar do Brasil",
     salary_range: "R$ 6.000,00 - R$ 8.000,00",
     publication: "2023-04-07"
+  },
+  {
+    id: 8,
+    title: "Designer Gráfico Sênior",
+    description: "Estamos em busca de um Designer Gráfico Sênior para se juntar ao nosso time de criação e ajudar a desenvolver conceitos criativos e inovadores para nossos clientes. O candidato ideal terá experiência em design gráfico e conhecimentos em ferramentas como Adobe Photoshop, Illustrator e InDesign. Deverá ser capaz de desenvolver layouts para materiais impressos e digitais, além de ter habilidade em criação de identidade visual e branding.",
+    career_focus: "Design",
+    required_skills: [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe InDesign",
+        "Identidade visual",
+        "Branding"
+    ],
+    type_contract: "PJ",
+    seniority_level: "Sênior",
+    type_job: "Presencial",
+    location: "São Paulo, SP",
+    salary_range: "R$ 5.000,00 - R$ 7.000,00",
+    publication: "2023-04-07"
   }
 ]

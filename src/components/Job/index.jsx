@@ -51,6 +51,7 @@ const Job = (props) => {
   const handleToggleInterest = () => {
     setIsInterested(!isInterested);
   }
+  
   return (
     <article 
       key={props.id} 
