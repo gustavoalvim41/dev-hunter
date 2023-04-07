@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import './styles.sass';
 
-const TypeJob = ({handleTypeJobChange, isCheckedRemoto, setIsCheckedRemoto, isCheckedPresencial, setIsCheckedPresencial}) => {
+const TypeJob = ({
+  handleTypeJobChange, 
+  isCheckedRemoto, 
+  setIsCheckedRemoto, 
+  isCheckedPresencial, 
+  setIsCheckedPresencial}) => {
   return (
-    <div className='typeJob'>
+    <div className='filterWrapper'>
       <h4>Tipo de vaga</h4>
       <div>
         <label 
@@ -41,35 +46,120 @@ const TypeJob = ({handleTypeJobChange, isCheckedRemoto, setIsCheckedRemoto, isCh
   )
 }
 
+const SeniorityLevel = ({
+  handleSeniorityLevelChange, 
+  isCheckedJunior, 
+  setIsCheckedJunior, 
+  isCheckedPleno, 
+  setIsCheckedPleno, 
+  isCheckedSenior, 
+  setIsCheckedSenior}) => {
+  return (
+    <div className='filterWrapper'>
+      <h4>Senioridade</h4>
+      <div>
+        <label 
+          htmlFor='checkbox-junior'
+        >
+          <input 
+            className='checkMark'
+            type='checkbox'
+            name='seniority_level'
+            checked={isCheckedJunior}
+            onClick={() => setIsCheckedJunior(!isCheckedJunior)}
+            onChange={handleSeniorityLevelChange}
+            id='checkbox-junior'
+            value='Júnior'
+          />
+          <span>Júnior</span>
+        </label>
+        <label 
+          htmlFor='checkbox-pleno'
+        >
+          <input 
+            className='checkMark'
+            type='checkbox'
+            name='seniority_level'
+            checked={isCheckedPleno}
+            onClick={() => setIsCheckedPleno(!isCheckedPleno)}
+            onChange={handleSeniorityLevelChange}
+            id='checkbox-pleno'
+            value='Pleno'
+          />
+          <span>Pleno</span>
+        </label>
+        <label 
+          htmlFor='checkbox-senior'
+        >
+          <input 
+            className='checkMark'
+            type='checkbox'
+            name='seniority_level'
+            checked={isCheckedSenior}
+            onClick={() => setIsCheckedSenior(!isCheckedSenior)}
+            onChange={handleSeniorityLevelChange}
+            id='checkbox-senior'
+            value='Sênior'
+          />
+          <span>Sênior</span>
+        </label>
+      </div>
+    </div>
+  )
+}
+
 const Filter = ({defaultJobs, setJobs}) => {
-  const [typeJob, setTypeJob] = useState('');
+  const [typeJob, setTypeJob] = useState('')
+  const [seniorityLevel, setSeniorityLevel] = useState('')
 
   const [isCheckedRemoto, setIsCheckedRemoto] = useState(false)
   const [isCheckedPresencial, setIsCheckedPresencial] = useState(false)
+  const [isCheckedJunior, setIsCheckedJunior] = useState(false)
+  const [isCheckedPleno, setIsCheckedPleno] = useState(false)
+  const [isCheckedSenior, setIsCheckedSenior] = useState(false)
 
   const handleTypeJobChange = (e) => {
     const selectedTypeJob = e.target.value;
     if (typeJob.includes(selectedTypeJob)) {
-      setTypeJob(typeJob.filter((type) => type !== selectedTypeJob));
+      setTypeJob(typeJob.filter((type) => type !== selectedTypeJob))
     } else {
-      setTypeJob([...typeJob, selectedTypeJob]);
+      setTypeJob([...typeJob, selectedTypeJob])
     }
   }
 
+  const handleSeniorityLevelChange = (e) => {
+    const selectedSeniorityLevel = e.target.value;
+    if (seniorityLevel.includes(selectedSeniorityLevel)) {
+      setSeniorityLevel(seniorityLevel.filter((seniority) => seniority !== selectedSeniorityLevel))
+    } else {
+      setSeniorityLevel([...seniorityLevel, selectedSeniorityLevel])
+    }
+  }
+  
   const filtering = () => {
-    let filteredData = defaultJobs
-
-    if (typeJob.length > 0) {
-      filteredData = filteredData.filter((job) => typeJob.includes(job.type_job));
+    let filteringData = defaultJobs
+    
+    if (typeJob.length > 0 || seniorityLevel.length > 0) {
+      filteringData = defaultJobs.filter((job) => {
+        const typeMatch = typeJob.length === 0 || typeJob.includes(job.type_job)
+        const seniorityMatch = seniorityLevel.length === 0 || seniorityLevel.includes(job.seniority_level)
+        return typeMatch && seniorityMatch
+      })
     }
-    setJobs(filteredData)
+  
+    setJobs(filteringData)
   }
+  
 
   const clearFilter = () => {
     setTypeJob([])
     setJobs(defaultJobs)
+
     setIsCheckedRemoto(false)
     setIsCheckedPresencial(false)
+    setIsCheckedJunior(false)
+    setIsCheckedPleno(false)
+    setIsCheckedSenior(false)
   }
 
   return (
@@ -85,6 +175,19 @@ const Filter = ({defaultJobs, setJobs}) => {
         isCheckedPresencial={isCheckedPresencial}
         setIsCheckedPresencial={setIsCheckedPresencial}
         handleTypeJobChange={handleTypeJobChange} 
+      />
+
+      <SeniorityLevel 
+        isCheckedJunior={isCheckedJunior}
+        setIsCheckedJunior={setIsCheckedJunior}
+
+        isCheckedPleno={isCheckedPleno}
+        setIsCheckedPleno={setIsCheckedPleno}
+
+        isCheckedSenior={isCheckedSenior}
+        setIsCheckedSenior={setIsCheckedSenior}
+
+        handleSeniorityLevelChange={handleSeniorityLevelChange} 
       />
 
       <div>
