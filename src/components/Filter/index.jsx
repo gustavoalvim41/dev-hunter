@@ -205,6 +205,7 @@ const Filter = ({defaultJobs, setJobs}) => {
         const seniorityMatch = seniorityLevel.length === 0 || seniorityLevel.includes(job.seniority_level)
         const contractMatch = typeContract.length === 0 || typeContract.includes(job.type_contract)
 
+        console.log(typeMatch && seniorityMatch && contractMatch)
         return typeMatch && seniorityMatch && contractMatch
       })
     }
@@ -215,6 +216,8 @@ const Filter = ({defaultJobs, setJobs}) => {
 
   const clearFilter = () => {
     setTypeJob([])
+    setSeniorityLevel([])
+    setTypeContract([])
     setJobs(defaultJobs)
 
     setIsCheckedRemoto(false)
