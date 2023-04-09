@@ -109,7 +109,11 @@ const SeniorityLevel = ({
 }
 
 const TypeContract = ({
-  handleTypeJobChange
+  isCheckedClt,
+  setIsCheckedClt,
+  isCheckedPj,
+  setIsCheckedPj,
+  handleTypeContractChange
   }) => {
   return (
     <div className='filterWrapper'>
@@ -122,7 +126,9 @@ const TypeContract = ({
             className='checkMark'
             type='checkbox'
             name='type_contract'
-            onChange={handleTypeJobChange}
+            checked={isCheckedClt}
+            onClick={() => setIsCheckedClt(!isCheckedClt)}
+            onChange={handleTypeContractChange}
             id='checkbox-clt'
             value='CLT'
           />
@@ -135,7 +141,9 @@ const TypeContract = ({
             className='checkMark'
             type='checkbox'
             name='type_contract'
-            onChange={handleTypeJobChange}
+            checked={isCheckedPj}
+            onClick={() => setIsCheckedPj(!isCheckedPj)}
+            onChange={handleTypeContractChange}
             id='checkbox-pj'
             value='PJ'
           />
@@ -147,14 +155,17 @@ const TypeContract = ({
 }
 
 const Filter = ({defaultJobs, setJobs}) => {
-  const [typeJob, setTypeJob] = useState('')
-  const [seniorityLevel, setSeniorityLevel] = useState('')
+  const [typeJob, setTypeJob] = useState([])
+  const [seniorityLevel, setSeniorityLevel] = useState([])
+  const [typeContract, setTypeContract] = useState([])
 
   const [isCheckedRemoto, setIsCheckedRemoto] = useState(false)
   const [isCheckedPresencial, setIsCheckedPresencial] = useState(false)
   const [isCheckedJunior, setIsCheckedJunior] = useState(false)
   const [isCheckedPleno, setIsCheckedPleno] = useState(false)
   const [isCheckedSenior, setIsCheckedSenior] = useState(false)
+  const [isCheckedClt, setIsCheckedClt] = useState(false)
+  const [isCheckedPj, setIsCheckedPj] = useState(false)
 
   const handleTypeJobChange = (e) => {
     const selectedTypeJob = e.target.value;
@@ -173,15 +184,28 @@ const Filter = ({defaultJobs, setJobs}) => {
       setSeniorityLevel([...seniorityLevel, selectedSeniorityLevel])
     }
   }
+
+  const handleTypeContractChange = (e) => {
+    const selectedTypeContract = e.target.value;
+    if (typeContract.includes(selectedTypeContract)) {
+      setTypeContract(typeContract.filter((contract) => contract !== selectedTypeContract))
+      console.log(typeContract)
+    } else {
+      setTypeContract([...typeContract, selectedTypeContract])
+      console.log(typeContract)
+    }
+  }
   
   const filtering = () => {
     let filteringData = defaultJobs
     
-    if (typeJob.length > 0 || seniorityLevel.length > 0) {
+    if (typeJob.length > 0 || seniorityLevel.length > 0 || typeContract.length > 0) {
       filteringData = defaultJobs.filter((job) => {
         const typeMatch = typeJob.length === 0 || typeJob.includes(job.type_job)
         const seniorityMatch = seniorityLevel.length === 0 || seniorityLevel.includes(job.seniority_level)
-        return typeMatch && seniorityMatch
+        const contractMatch = typeContract.length === 0 || typeContract.includes(job.type_contract)
+
+        return typeMatch && seniorityMatch && contractMatch
       })
     }
   
@@ -198,6 +222,8 @@ const Filter = ({defaultJobs, setJobs}) => {
     setIsCheckedJunior(false)
     setIsCheckedPleno(false)
     setIsCheckedSenior(false)
+    setIsCheckedClt(false)
+    setIsCheckedPj(false)
   }
 
   return (
@@ -218,17 +244,20 @@ const Filter = ({defaultJobs, setJobs}) => {
       <SeniorityLevel 
         isCheckedJunior={isCheckedJunior}
         setIsCheckedJunior={setIsCheckedJunior}
-
         isCheckedPleno={isCheckedPleno}
         setIsCheckedPleno={setIsCheckedPleno}
-
         isCheckedSenior={isCheckedSenior}
         setIsCheckedSenior={setIsCheckedSenior}
-
         handleSeniorityLevelChange={handleSeniorityLevelChange} 
       />
 
-      <TypeContract />
+      <TypeContract 
+        isCheckedClt={isCheckedClt}
+        setIsCheckedClt={setIsCheckedClt}
+        isCheckedPj={isCheckedPj}
+        setIsCheckedPj={setIsCheckedPj}
+        handleTypeContractChange={handleTypeContractChange} 
+      />
 
       <div>
         <button 
