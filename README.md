@@ -2,6 +2,8 @@
 
 <div align="center" id="top">
   <a href="https://dev-hunter.vercel.app/">Deploy</a>
+
+  <img src="./github/dev-hunter-banner.png" alt="Dev Hunter Banner" />
 </div>
 
 ## ☕ Sobre o Projeto
