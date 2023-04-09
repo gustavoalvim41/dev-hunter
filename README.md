@@ -19,9 +19,9 @@ Esses filtros ajudam os profissionais de tecnologia a encontrar vagas que corres
 
 ## 🎨 Design
 
-O design do projeto Dev Hunter foi totalmente inspirado no site <a href="https://www.geekhunter.com.br/">GeekHunter</a>, uma referência no mercado de tecnologia e recrutamento de profissionais dessa área. 
+O design do projeto Dev Hunter foi totalmente inspirado no site <a href="https://www.geekhunter.com.br/">GeekHunter</a>, uma referência no mercado de tecnologia e recrutamento de profissionais dessa área. O objetivo do design da plataforma Dev Hunter é proporcionar uma experiência intuitiva para os usuários, tornando a navegação fácil e agradável. 
 
-O objetivo do design da plataforma Dev Hunter é proporcionar uma experiência intuitiva para os usuários, tornando a navegação fácil e agradável. A interface é responsiva, adaptando-se automaticamente a diferentes dispositivos e tamanhos de tela, proporcionando uma experiência de uso consistente em desktops, tablets e smartphones.
+A interface é responsiva, adaptando-se automaticamente a diferentes dispositivos e tamanhos de tela, proporcionando uma experiência de uso consistente em desktops, tablets e smartphones.
 
 ## 🚀 Tecnologias Utilizadas
 
