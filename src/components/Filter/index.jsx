@@ -108,6 +108,44 @@ const SeniorityLevel = ({
   )
 }
 
+const TypeContract = ({
+  handleTypeJobChange
+  }) => {
+  return (
+    <div className='filterWrapper'>
+      <h4>Regime de trabalho</h4>
+      <div>
+        <label 
+          htmlFor='checkbox-clt'
+        >
+          <input 
+            className='checkMark'
+            type='checkbox'
+            name='type_contract'
+            onChange={handleTypeJobChange}
+            id='checkbox-clt'
+            value='CLT'
+          />
+          <span>CLT</span>
+        </label>
+        <label 
+          htmlFor='checkbox-pj'
+        >
+          <input 
+            className='checkMark'
+            type='checkbox'
+            name='type_contract'
+            onChange={handleTypeJobChange}
+            id='checkbox-pj'
+            value='PJ'
+          />
+          <span>PJ</span>
+        </label>
+      </div>
+    </div>
+  )
+}
+
 const Filter = ({defaultJobs, setJobs}) => {
   const [typeJob, setTypeJob] = useState('')
   const [seniorityLevel, setSeniorityLevel] = useState('')
@@ -189,6 +227,8 @@ const Filter = ({defaultJobs, setJobs}) => {
 
         handleSeniorityLevelChange={handleSeniorityLevelChange} 
       />
+
+      <TypeContract />
 
       <div>
         <button 
