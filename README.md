@@ -6,11 +6,20 @@
 
 ## ☕ Sobre o Projeto
 
-> Em breve...
+O projeto Dev Hunter foi desenvolvido para ser uma plataforma que conecta empresas e desenvolvedores, permitindo que ambos encontrem as melhores oportunidades no mercado. O objetivo principal é tornar o processo de busca e contratação de profissionais mais eficiente e eficaz, economizando tempo e recursos para ambas as partes.
+
+No projeto Dev Hunter é possível fazer vários filtros na listagem de vagas, permitindo que os profissionais de tecnologia encontrem as melhores oportunidades de emprego de acordo com suas preferências e habilidades.
+
+Entre os filtros disponíveis na plataforma, destacam-se:
+- Tipo de vaga: remoto, presencial;
+- Senioridade: júnior, pleno ou sênior;
+- Regime de trabalho: clt ou pj;
+
+Esses filtros ajudam os profissionais de tecnologia a encontrar vagas que correspondam às suas habilidades e expectativas, permitindo que eles se candidatem apenas às vagas que sejam mais adequadas para seu perfil profissional e necessidades pessoais.
 
 ## 🎨 Design
 
-> Em breve...
+O design do projeto Dev Hunter foi totalmente inspirado no site GeekHunter, uma referência no mercado de tecnologia e recrutamento de profissionais dessa área.
 
 ## 🚀 Tecnologias Utilizadas
 
