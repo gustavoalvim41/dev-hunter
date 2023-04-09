@@ -5,51 +5,53 @@ import { FiBriefcase, FiMapPin, FiDollarSign } from "react-icons/fi";
 import { isToday, isYesterday, differenceInDays } from 'date-fns';
 
 const compareDate = (date) => {
-  const myDate = new Date(date);
-  const today = new Date();
-  const yesterday = new Date(today);
-  yesterday.setDate(yesterday.getDate() - 1);
+  const myDate = new Date(date)
+  myDate.setHours(0, 0, 0, 0)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const yesterday = new Date(today)
+  yesterday.setDate(yesterday.getDate() - 1)
 
-  let diffInDays = differenceInDays(today, myDate);
+  let diffInDays = differenceInDays(today, myDate)
 
   if (isToday(myDate)) {
-    diffInDays = 0;
+    diffInDays = 0
   } else if (isYesterday(myDate)) {
-    diffInDays = 1;
+    diffInDays = 1
   }
 
   let diffString;
 
   if (diffInDays === 0) {
-    diffString = 'hoje';
+    diffString = 'hoje'
   } else if (diffInDays === 1) {
-    diffString = 'ontem';
+    diffString = 'ontem'
   } else if (diffInDays < 7) {
     diffString = `${diffInDays} dias atrás`;
   } else if (diffInDays < 30) {
     const diffInWeeks = Math.floor(diffInDays / 7);
     if (diffInWeeks === 1) {
-      diffString = '1 semana atrás';
+      diffString = '1 semana atrás'
     } else {
-      diffString = `${diffInWeeks} semanas atrás`;
+      diffString = `${diffInWeeks} semanas atrás`
     }
   } else {
-    const diffInMonths = Math.floor(diffInDays / 30);
+    const diffInMonths = Math.floor(diffInDays / 30)
     if (diffInMonths === 1) {
-      diffString = '1 mês atrás';
+      diffString = '1 mês atrás'
     } else {
-      diffString = `${diffInMonths} meses atrás`;
+      diffString = `${diffInMonths} meses atrás`
     }
   }
 
-  return diffString;
+  return diffString
 }
 
 const Job = (props) => {
   const [isInterested, setIsInterested] = useState(false)
 
   const handleToggleInterest = () => {
-    setIsInterested(!isInterested);
+    setIsInterested(!isInterested)
   }
   
   return (
