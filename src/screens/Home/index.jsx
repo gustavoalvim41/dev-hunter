@@ -24,6 +24,11 @@ const Home = () => {
                 <p>
                   <b>{jobs.length} vagas</b> disponíveis
                 </p>
+                <button 
+                  className='btnInterested'
+                >
+                  Filtrar
+                </button>
               </div>
               {
                 jobs.map((item) => (
