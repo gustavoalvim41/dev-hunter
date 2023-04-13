@@ -15,7 +15,7 @@ const Modal = ({isOpen, onClose, children}) => {
             >
               <FiX 
                 color='#000'
-                size={28}
+                size={32}
               />
             </button>
           </div>
