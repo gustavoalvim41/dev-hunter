@@ -5,11 +5,14 @@ import { data } from '../../utils/data'
 
 import Job from '../../components/Job';
 import Filter from '../../components/Filter';
+import Modal from '../../components/Modal';
 
 const Home = () => {
   const [defaultJobs, setDefaultJobs] = useState(data);
   const [jobs, setJobs] = useState(data)
-  
+
+  const [isOpen, setIsOpen] = useState(false)
+ 
   return (
     <div>
       <main>
@@ -24,8 +27,8 @@ const Home = () => {
                 <p>
                   <b>{jobs.length} vagas</b> disponíveis
                 </p>
-                <button 
-                  className='btnInterested'
+                <button
+                  onClick={() => setIsOpen(true)}
                 >
                   Filtrar
                 </button>
@@ -58,6 +61,17 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <Modal 
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        >
+          <Filter
+            jobs={jobs}
+            setJobs={setJobs}
+            defaultJobs={defaultJobs}
+          />
+        </Modal>
       </main>
     </div>
   )
