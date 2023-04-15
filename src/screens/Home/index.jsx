@@ -5,7 +5,6 @@ import { data } from '../../utils/data'
 
 import Job from '../../components/Job';
 import Filter from '../../components/Filter';
-import Modal from '../../components/Modal';
 
 const Home = () => {
   const [defaultJobs, setDefaultJobs] = useState(data);
@@ -27,11 +26,6 @@ const Home = () => {
                 <p>
                   <b>{jobs.length} vagas</b> disponíveis
                 </p>
-                <button
-                  onClick={() => setIsOpen(true)}
-                >
-                  Filtrar
-                </button>
               </div>
               {
                 jobs.map((item) => (
@@ -61,17 +55,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        <Modal 
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-        >
-          <Filter
-            jobs={jobs}
-            setJobs={setJobs}
-            defaultJobs={defaultJobs}
-          />
-        </Modal>
       </main>
     </div>
   )
