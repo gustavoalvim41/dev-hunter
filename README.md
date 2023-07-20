@@ -1,11 +1,3 @@
-<h1 align="center">Dev Hunter</h1>
-
-<div align="center" id="top">
-  <a href="https://dev-hunter.vercel.app/">Deploy</a>
-
-  <img src="./github/dev-hunter.png" alt="Dev Hunter Banner" />
-</div>
-
 ## ☕ Sobre o Projeto
 
 O projeto Dev Hunter foi desenvolvido para ser uma plataforma que conecta empresas e desenvolvedores, permitindo que ambos encontrem as melhores oportunidades no mercado. O objetivo principal é tornar o processo de busca e contratação de profissionais mais eficiente e eficaz, economizando tempo e recursos para ambas as partes.
