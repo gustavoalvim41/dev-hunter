@@ -1,6 +1,6 @@
 ## ☕ Sobre o Projeto
 
-O projeto Dev Hunter foi desenvolvido para ser uma plataforma que conecta empresas e desenvolvedores, permitindo que ambos encontrem as melhores oportunidades no mercado. O objetivo principal é tornar o processo de busca e contratação de profissionais mais eficiente e eficaz, economizando tempo e recursos para ambas as partes.
+O projeto Dev Hunter foi desenvolvido para ser uma plataforma fictícia que conecta empresas e desenvolvedores, permitindo que ambos encontrem as melhores oportunidades no mercado. O objetivo principal é tornar o processo de busca e contratação de profissionais mais eficiente e eficaz, economizando tempo e recursos para ambas as partes.
 
 No projeto Dev Hunter é possível fazer vários filtros na listagem de vagas, permitindo que os profissionais de tecnologia encontrem as melhores oportunidades de emprego de acordo com suas preferências e habilidades.
 
